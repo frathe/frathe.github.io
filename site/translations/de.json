@@ -2,6 +2,12 @@
   "version": 1,
   "locale": "de",
   "entries": {
+    "downloads.app-store-availability": {
+      "source_hash": "a5e5fdfc042e8663082fdd8370ee7326f9221bf634c70b9ff1aa517d92edd3f9",
+      "request_hash": "a5e5fdfc042e8663082fdd8370ee7326f9221bf634c70b9ff1aa517d92edd3f9",
+      "format": "text",
+      "text": "Die App-Store-Version ist weltweit erhältlich, mit Ausnahme von Frankreich, wo dies aufgrund der dortigen Verschlüsselungsvorschriften nicht möglich ist."
+    },
     "downloads.introduction": {
       "source_hash": "14f8d20f476d548ecbadb7aeff2b38338a44d5b818453ef3c8f8eeb244a3a1e5",
       "request_hash": "4ce777c135822298994c46b8a07e83922ffdc224042588e2c8e07d27cb39a78c",
@@ -45,10 +51,10 @@
       "text": "Intel (x86_64)"
     },
     "downloads.warning.body": {
-      "source_hash": "bbfa4a441af4fa5159ff93f2c8425447be0a59e4be4b6653d0c1ca0d4eb8149c",
-      "request_hash": "4a6bf8ae61128371c87d5f81fefe23fdc8d21ac94cb4ba2feca2d8a9a8bfdf0d",
+      "source_hash": "e2d770232e99e2022adcc0b6647437b734ede7eb96fc627b97607f3b287e174f",
+      "request_hash": "b8aa2b77d3415ecdb67191f1908ee8cb888030df754b1b4a516db6cd14b71269",
       "format": "html",
-      "text": "\u003cp\u003eDie Release-Version ist weder mit einem „Apple Developer ID“ signiert noch beglaubigt, daher wird sie von „Gatekeeper“ nach dem Herunterladen in Quarantäne verschoben und als beschädigt gemeldet. Das ist sie jedoch nicht – um sie trotzdem zu öffnen, klicken Sie entweder mit der rechten Maustaste (Control-click) \u003ccode\u003ePicFetch.app\u003c/code\u003e und wählen Sie \u003cstrong\u003e„Öffnen“\u003c/strong\u003e, bestätigen Sie den angezeigten Dialog, oder führen Sie \u003ccode\u003exattr -cr \u0026quot;/path/to/PicFetch.app\u0026quot;\u003c/code\u003e in „Terminal“, um die Quarantäne aufzuheben, und öffnen Sie die Datei anschließend wie gewohnt.\u003c/p\u003e"
+      "text": "\u003cp\u003eDiese Warnung gilt nur für Downloads von GitHub. Bei der Version aus dem Mac App Store sind diese Schritte nicht erforderlich. Die GitHub-Version ist weder mit einer Apple Developer ID signiert noch notariell beglaubigt, weshalb Gatekeeper sie nach dem Download unter Quarantäne stellt und als beschädigt meldet. Das ist sie jedoch nicht – um sie trotzdem zu öffnen, klicken Sie entweder mit der rechten Maustaste (Control-click) \u003ccode\u003ePicFetch.app\u003c/code\u003e und \u003cstrong\u003e„Öffnen“\u003c/strong\u003e auswählen, den angezeigten Dialog bestätigen oder \u003ccode\u003exattr -cr \u0026quot;/path/to/PicFetch.app\u0026quot;\u003c/code\u003e im „Terminal“, um die Quarantäneaufzeichnung aufzuheben, und öffnen Sie die Datei anschließend wie gewohnt.\u003c/p\u003e"
     },
     "downloads.warning.title": {
       "source_hash": "9270ee72bfecaa7bdbcff091e4c310009f4773df215cc0f436b31d07bfedbc46",
@@ -289,6 +295,12 @@
       "request_hash": "e6cf347fffe1a1e693c61e955ab62c6c1abb927ff6b2c1809567f7cab8879b45",
       "format": "text",
       "text": "Zoomen und Schwenken"
+    },
+    "footer.apple-credit": {
+      "source_hash": "db610afa04cc3a1c516d8c5828461e71ade7ff8e2179d31ea60cec9da4f4c25b",
+      "request_hash": "87dfe1e12da484eac931bcf4dc3162cba9232890c5c26bddb452975f0ccc3db8",
+      "format": "html",
+      "text": "\u003cp\u003e„Apple“ und das Apple-Logo sind Marken von Apple Inc., die in den USA und anderen Ländern eingetragen sind. „Mac App Store“ ist eine Dienstleistungsmarke von Apple Inc.\u003c/p\u003e"
     },
     "footer.colophon": {
       "source_hash": "d64fb95a4b0105c8613f70ae86c8501f2c2cbed23158da8baac4bd3a8af38bb6",

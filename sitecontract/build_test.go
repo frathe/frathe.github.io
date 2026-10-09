@@ -469,6 +469,7 @@ func TestInvalidSourceRejectsFieldsOwnedByAnotherSectionKind(t *testing.T) {
 		{name: "body", owner: "downloads", yaml: "    body: incompatible\n"},
 		{name: "download_groups", owner: "downloads", yaml: "    download_groups:\n      - {}\n"},
 		{name: "notice", owner: "downloads", yaml: "    notice: {}\n"},
+		{name: "availability_note", owner: "downloads", yaml: "    availability_note: {}\n"},
 	}
 
 	for _, sectionKind := range sectionKinds {

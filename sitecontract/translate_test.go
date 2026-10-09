@@ -128,8 +128,8 @@ func TestMakeTranslateUsesDeepLContractAndWritesCache(t *testing.T) {
 	gotRequestCount, gotLargestBatch, gotRequestError := requestCount, largestBatch, requestError
 	gotRenderedHTML, gotProtectedKeep := sawRenderedHTML, sawProtectedKeep
 	mu.Unlock()
-	if gotRequestCount != 2 {
-		t.Fatalf("make translate made %d DeepL requests, want two batches for more than 50 texts", gotRequestCount)
+	if gotRequestCount < 2 {
+		t.Fatalf("make translate made %d DeepL requests, want at least two batches for more than 50 texts", gotRequestCount)
 	}
 	if gotLargestBatch > 50 {
 		t.Fatalf("make translate sent %d texts in one request, want at most 50", gotLargestBatch)

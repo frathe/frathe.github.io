@@ -609,6 +609,8 @@ func copyTemplateDirectory(t *testing.T, repo string) string {
 func writeStaticSiteFiles(t *testing.T, root string) {
 	t.Helper()
 	for name, data := range map[string]string{
+		"badges/mac-app-store-en.svg":          "test badge",
+		"badges/mac-app-store-de.svg":          "test badge",
 		"favicon.ico":                          "test icon",
 		"manifest.json":                        "{}\n",
 		"screenshots/location-map.webp":        "test screenshot",

@@ -38,6 +38,7 @@ site:
     - OpenStreetMap
     - Gatekeeper
     - Apple Developer ID
+    - Mac App Store
     - DeepL
     - Terminal
     - MIT
@@ -388,6 +389,18 @@ sections:
         title:
           id: downloads.macos.title
           text: macOS
+        badge:
+          name: Mac App Store
+          href: https://apps.apple.com/app/picfetch/id6817901220
+          images:
+            en:
+              url: https://frathe.github.io/badges/mac-app-store-en.svg
+              width: 172
+              height: 44
+            de:
+              url: https://frathe.github.io/badges/mac-app-store-de.svg
+              width: 172
+              height: 44
         links:
           - id: macos-arm64
             label:
@@ -441,6 +454,9 @@ sections:
               id: downloads.linux.arm64
               text: ARM64
             href: https://github.com/frathe/picfetch/releases/latest/download/picfetch-linux-arm64.tar.gz
+    availability_note:
+      id: downloads.app-store-availability
+      text: The App Store version is available worldwide except in France, due to French encryption regulations.
     notice:
       title:
         id: downloads.warning.title
@@ -483,6 +499,7 @@ footer:
       label: {id: footer.links.buy-coffee, text: Buy me a coffee}
       href: https://buymeacoffee.com/gcobnk0grj
   colophon: footer.colophon
+  credit: footer.apple-credit
 ---
 
 ## Tagline {#hero.tagline}
@@ -567,7 +584,11 @@ Pre-built binaries, no Go toolchain required — the links below always fetch th
 
 ## macOS warning {#downloads.warning.body}
 
-The release build isn’t signed with an Apple Developer ID or notarized, so Gatekeeper quarantines it after download and claims it’s damaged. It isn’t — to open it anyway, either right-click (Control-click) <code>PicFetch.app</code> and choose <strong>Open</strong>, confirming the dialog that appears, or run <code>xattr -cr "/path/to/PicFetch.app"</code> in Terminal to clear the quarantine flag and then open it normally.
+This warning applies only to downloads from GitHub. The Mac App Store version does not require these steps. The GitHub release build isn’t signed with an Apple Developer ID or notarized, so Gatekeeper quarantines it after download and claims it’s damaged. It isn’t — to open it anyway, either right-click (Control-click) <code>PicFetch.app</code> and choose <strong>Open</strong>, confirming the dialog that appears, or run <code>xattr -cr "/path/to/PicFetch.app"</code> in Terminal to clear the quarantine flag and then open it normally.
+
+## Apple trademark credit {#footer.apple-credit}
+
+Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. Mac App Store is a service mark of Apple Inc.
 
 ## Colophon {#footer.colophon}
 

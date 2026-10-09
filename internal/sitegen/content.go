@@ -91,16 +91,17 @@ type Link struct {
 }
 
 type Section struct {
-	ID             string          `yaml:"id"`
-	Kind           string          `yaml:"kind"`
-	Anchor         string          `yaml:"anchor"`
-	Heading        LocalizedText   `yaml:"heading"`
-	Body           string          `yaml:"body"`
-	Video          *Video          `yaml:"video"`
-	Screenshots    []Screenshot    `yaml:"screenshots"`
-	Features       []Feature       `yaml:"features"`
-	DownloadGroups []DownloadGroup `yaml:"download_groups"`
-	Notice         *Notice         `yaml:"notice"`
+	ID               string          `yaml:"id"`
+	Kind             string          `yaml:"kind"`
+	Anchor           string          `yaml:"anchor"`
+	Heading          LocalizedText   `yaml:"heading"`
+	Body             string          `yaml:"body"`
+	Video            *Video          `yaml:"video"`
+	Screenshots      []Screenshot    `yaml:"screenshots"`
+	Features         []Feature       `yaml:"features"`
+	DownloadGroups   []DownloadGroup `yaml:"download_groups"`
+	AvailabilityNote *LocalizedText  `yaml:"availability_note"`
+	Notice           *Notice         `yaml:"notice"`
 }
 
 type Video struct {
@@ -157,6 +158,7 @@ type Footer struct {
 	Alt      LocalizedText `yaml:"alt"`
 	Links    []Link        `yaml:"links"`
 	Colophon string        `yaml:"colophon"`
+	Credit   string        `yaml:"credit"`
 }
 
 func ParseContent(data []byte) (*Content, error) {
@@ -481,6 +483,11 @@ func (v *contentValidator) validate() error {
 					}
 				}
 			}
+			if section.AvailabilityNote != nil {
+				if err := v.requireText(path+".availability_note", *section.AvailabilityNote); err != nil {
+					return err
+				}
+			}
 			if section.Notice == nil {
 				return fmt.Errorf("%s.notice: value is required", path)
 			}
@@ -505,6 +512,11 @@ func (v *contentValidator) validate() error {
 	}
 	if err := v.requireMarkdown("footer.colophon", v.content.Footer.Colophon); err != nil {
 		return err
+	}
+	if v.content.Footer.Credit != "" {
+		if err := v.requireMarkdown("footer.credit", v.content.Footer.Credit); err != nil {
+			return err
+		}
 	}
 	for id := range v.content.Markdown {
 		if _, referenced := v.markdownRefs[id]; !referenced {
@@ -532,6 +544,7 @@ func validateSectionKindFields(path string, section Section) error {
 		{name: "body", ownerKind: "downloads", populated: section.Body != ""},
 		{name: "download_groups", ownerKind: "downloads", populated: section.DownloadGroups != nil},
 		{name: "notice", ownerKind: "downloads", populated: section.Notice != nil},
+		{name: "availability_note", ownerKind: "downloads", populated: section.AvailabilityNote != nil},
 	}
 	for _, field := range fields {
 		if field.populated && field.ownerKind != section.Kind {

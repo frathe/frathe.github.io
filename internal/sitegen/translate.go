@@ -285,6 +285,11 @@ func collectTranslationUnits(content *Content) ([]translationUnit, error) {
 					}
 				}
 			}
+			if section.AvailabilityNote != nil {
+				if err := addText(*section.AvailabilityNote); err != nil {
+					return nil, err
+				}
+			}
 			if err := addText(section.Notice.Title); err != nil {
 				return nil, err
 			}
@@ -303,6 +308,11 @@ func collectTranslationUnits(content *Content) ([]translationUnit, error) {
 	}
 	if err := addMarkdown(content.Footer.Colophon); err != nil {
 		return nil, err
+	}
+	if content.Footer.Credit != "" {
+		if err := addMarkdown(content.Footer.Credit); err != nil {
+			return nil, err
+		}
 	}
 	sort.Slice(units, func(i, j int) bool { return units[i].ID < units[j].ID })
 	for index := 1; index < len(units); index++ {
